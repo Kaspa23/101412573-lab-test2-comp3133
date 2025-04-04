@@ -1,0 +1,21 @@
+<div  class="filter-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Select House</mat-label>
+      <mat-select (selectionChange)="onHouseSelected($event.value)">
+        <mat-option *ngFor="let house of houses" [value]="house">{{ house }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+  
+
+  <div class="character-list">
+    <div *ngFor="let character of characters">
+      <mat-card class="character-card">
+        <mat-card-header>
+          <mat-card-title>{{ character.name }}</mat-card-title>
+          <mat-card-subtitle>{{ character.house }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="character.image" alt="{{ character.name }}" />
+      </mat-card>
+    </div>
+  </div>
